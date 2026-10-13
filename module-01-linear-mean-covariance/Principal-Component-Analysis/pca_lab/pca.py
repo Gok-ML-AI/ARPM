@@ -20,10 +20,10 @@ principal directions : (n_variables, n_variables) array
 e₁, e₂, ... (ARPM: e) - eigenvectors, 1 per column.
 Column K is the direction paired with variances_along_directions[k]
 """
-def sorted_eig(s2):
+def sorted_eig(covariance_matrix):
     # eigh is numpy's eigen-solves for symmetric matrices (covariances always are).
     # It returns eigenvalues in ASCENDING  order (smallest first).
-    variances_along_directions, principal_directions = eigh(s2)
+    variances_along_directions, principal_directions = eigh(covariance_matrix)
 
     # Positions that put the eigenvalues in DESCENDING order.
     # Negating flips the order, so argsort's smallest-first becomes largest first
@@ -42,7 +42,7 @@ def sorted_eig(s2):
     # Columns are flipped WHOLE.  mixed signs inside a column are kept (they carry meaning)
 
     # For each column, the row holding its largest entry by size
-    # (abs is only used to measure size; nothng is changed here).
+    # (abs is only used to measure size; nothing is changed here).
     row_of_largest_entry = argmax(abs(principal_directions), axis=0)
 
     # True for each column whose largest entry is -ve.
