@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ARPM licensed data and regenerable outputs (keep the READMEs and placeholders)
+probabilistic_machine_learning/*/data/*
+!probabilistic_machine_learning/*/data/README.md
+probabilistic_machine_learning/*/outputs/*
+!probabilistic_machine_learning/*/outputs/.gitkeep
