@@ -39,3 +39,5 @@ unit3_autoencoders_graphical_clustering/
 | autoencoders_kmeans | `normal.rvs(mu, sqrt(sigma2), …)` | scipy's `scale` is the **std dev**; ARPM passed the variance |
 | homogeneous_correlation_clustering | cross-check cell only (ARPM code untouched) | ARPM's inner loop overwrites the within-block average with one that includes the diagonal 1s |
 | — | `corr_distance` forces `d_ii = 0` | `corrcoef` diagonal is 1−1e-16 → `d_ii ≈ 1e-8` → tiny self-loops in the MST graph |
+
+   - Data for the testing set: see ARPM/data/README.md → "Open issue: out-of-sample data"
